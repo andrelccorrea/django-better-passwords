@@ -1,0 +1,134 @@
+[MESSAGES CONTROL]
+disable=C,E,F,I,R,W,RP
+enable=bad-str-strip-call,
+       too-few-format-args,
+       too-many-format-args,
+       truncated-format-string,
+       bad-format-character,
+       redundant-keyword-arg,
+       unexpected-keyword-arg,
+       too-many-function-args,
+       no-value-for-parameter,
+       assignment-from-no-return,
+       maybe-no-member,
+       not-callable,
+       no-member,
+       bad-super-call,
+       notimplemented-raised,
+       raising-non-exception,
+       raising-bad-type,
+       bad-except-order,
+       unused-import,
+       invalid-all-object,
+       undefined-all-variable,
+       undefined-variable,
+       used-before-assignment,
+       interface-is-not-class,
+       missing-interface-method,
+       no-self-argument,
+       access-member-before-definition,
+       method-hidden,
+       duplicate-argument-name,
+       nonexistent-operator,
+       yield-outside-function,
+       return-outside-function,
+       not-in-loop,
+       function-redefined,
+       return-in-init,
+       unused-import,
+       unused-variable,
+       unused-argument,
+       unused-wildcard-import,
+       pointless-except,
+       raising-string,
+       redefined-outer-name,
+       redefine-in-handler,
+       reimported,
+       unnecessary-semicolon,
+       non-iterator-returned,
+       non-parent-init-called,
+       signature-differs,
+       arguments-differ,
+       protected-access,
+       bad-staticmethod-argument,
+       attribute-defined-outside-init,
+       assert-on-tuple,
+       lost-exception,
+       star-args,
+       bad-builtin,
+       exec-used,
+       useless-else-on-loop,
+       duplicate-key,
+       unnecessary-lambda,
+       unnecessary-pass,
+       expression-not-assigned,
+       pointless-string-statement,
+       pointless-statement,
+       dangerous-default-value,
+       unreachable,
+       RP0801,
+       interface-not-implemented,
+       abstract-class-not-used,
+       too-many-statements,
+       too-many-arguments,
+       too-many-branches,
+       too-many-return-statements,
+       too-many-public-methods,
+       too-many-instance-attributes,
+       too-many-ancestors,
+       duplicate-code,
+       cyclic-import,
+       deprecated-pragma,
+       useless-suppression,
+       suppressed-message,
+       I0014,
+       file-ignored,
+       locally-enabled,
+       locally-disabled,
+       bad-inline-option,
+       raw-checker-failed,
+       import-error,
+       F0321,
+       unresolved-interface,
+       method-check-failed,
+       parse-error,
+       F0004,
+       ignored-builtin-module,
+       superfluous-parens,
+       C0324,
+       C0323,
+       C0322,
+       multiple-statements,
+       missing-final-newline,
+       trailing-whitespace,
+       line-too-long,
+       bad-mcs-classmethod-argument,
+       bad-classmethod-argument,
+       singleton-comparison,
+       invalid-name,
+       empty-docstring,
+       too-few-public-methods
+
+[REPORTS]
+# Tells whether to display a full report or only the messages.
+reports=no
+
+[SIMILARITIES]
+
+# Minimum lines number of a similarity.
+min-similarity-lines=3
+
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length=120
+
+[DESIGN]
+
+# Maximum number of arguments for function / method
+max-args=8
+
+# Minimum number of public methods for a class (see R0903).
+min-public-methods=1
+
+# Maximum number of public methods for a class (see R0904).
+max-public-methods=10

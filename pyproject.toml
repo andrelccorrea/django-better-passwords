@@ -1,0 +1,35 @@
+[project]
+dynamic = ["dependencies"]
+name = "django-better-passwords"
+version = "0.1"
+description = "A Django app to provide tools to enforce stronger password policies and expiration."
+authors = [{ name = "André Corrêa", email = "andre.lcosta@hotmail.com" }]
+maintainers = [{ name = "André Corrêa", email = "andre.lcosta@hotmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["password", "auth", "better", "expiration"]
+requires-python = ">=3.7"
+
+[build-system]
+requires = ['setuptools>=40.8.0']
+build-backend = 'setuptools.build_meta'
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+skip-string-normalization = false
+
+[tool.isort]
+profile = 'black'
+line_length = 100
+include_trailing_comma = true
+force_alphabetical_sort_within_sections = true
+use_parentheses = true
+skip = ['.git', '.tox', '*.yaml']
+skip_glob = ["**/migrations", "**/venv", "**/.venv"]
+multi_line_output = 3
+ensure_newline_before_comments = true
+force_grid_wrap = 2
+filter_files = true
+skip_gitignore = true

@@ -1,0 +1,6 @@
+django
+black
+flake8
+isort
+pip-tools
+pre-commit

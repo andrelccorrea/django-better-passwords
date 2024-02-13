@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include django_better_passwords/static *
+recursive-include django_better_passwords/templates *
+recursive-include docs *
