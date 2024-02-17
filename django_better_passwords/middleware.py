@@ -24,16 +24,17 @@ class PasswordExpirationMiddleware:
         user = request.user
 
         if user.is_authenticated:
-            latest_record = user.password_records.latest()
-            records_count = user.password_records.count()
+            record = user.password_records
 
-            if ((timezone.now() - latest_record.date) >= self.expiration_days) or (
-                records_count <= 1
+            if ((timezone.now() - record.date) >= self.expiration_days) or (
+                record.first_login
             ):
+               
                 if resolver_match.app_name == "admin" and resolver_match.url_name not in (
                     "password_change",
                     "logout",
-                ):
+                ) or not resolver_match.app_name and resolver_match.url_name in (
+                    'pages-root', 'pages-details-by-slug'):
                     return redirect(
                         reverse(
                             "admin:password_change",
@@ -49,6 +50,7 @@ class PasswordExpirationMiddleware:
                         settings.DBP_LOGOUT_URL,
                     )
                 ):
+
                     return redirect(
                         reverse(
                             settings.DBP_PASSWORD_CHANGE_REDIRECT_URL,
@@ -59,7 +61,7 @@ class PasswordExpirationMiddleware:
                 if request.method == "GET":
                     message = (
                         "Update your password to get started."
-                        if records_count <= 1
+                        if record.first_login
                         else f"Your password is at least {self.expiration_days.days} days old and needs to be updated."
                     )
 

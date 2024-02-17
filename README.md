@@ -20,7 +20,7 @@ Recommended Python 3.11 or 3.12 and Django 4.2 or 5.0;
 ## Quick start
 
 1. Install the lib with `pip install django-better-passwords`.
-2. Add `'django_better_passwords'` to `INSTALLED_APPS`.
+2. Add `'django_better_passwords.apps.BetterPasswordsConfig'` to `INSTALLED_APPS`.
 3. Add `'django_better_passwords.middleware.PasswordExpirationMiddleware'` to `MIDDLEWARE`. <br>It should be listed after authentication, session and message middlewares, like this:
    ```python
    MIDDLEWARE = [
