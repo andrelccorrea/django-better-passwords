@@ -8,7 +8,7 @@ def create_password_record(apps, schema_editor):
     # We get the model from the versioned app registry;
     # if we directly import it, it'll be the wrong version
     User = apps.get_model("auth", "User")
-    PasswordRecord = apps.get_model("better_passwords", "PasswordRecord")
+    PasswordRecord = apps.get_model("django_better_passwords", "PasswordRecord")
 
     for user in User.objects.all():
         PasswordRecord.objects.create(user=user, password=user.password)
@@ -16,7 +16,7 @@ def create_password_record(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("better_passwords", "0001_initial"),
+        ("django_better_passwords", "0001_initial"),
     ]
 
     operations = [migrations.RunPython(create_password_record)]
