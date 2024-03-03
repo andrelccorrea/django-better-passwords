@@ -7,4 +7,4 @@ class BetterPasswordsConfig(AppConfig):
 
     def ready(self):
         # Implicitly connect signal handlers decorated with @receiver.
-        from . import signals  # noqa
+        import django_better_passwords.signals  # noqa

@@ -30,9 +30,15 @@ class PasswordExpirationMiddleware:
             if ((timezone.now() - latest_record.date) >= self.expiration_days) or (
                 records_count <= 1
             ):
-                if resolver_match.app_name == "admin" and resolver_match.url_name not in (
-                    "password_change",
-                    "logout",
+                if (
+                    resolver_match.app_name == "admin"
+                    and resolver_match.url_name
+                    not in (
+                        "password_change",
+                        "logout",
+                    )
+                    or not resolver_match.app_name
+                    and resolver_match.url_name in ("pages-root", "pages-details-by-slug")
                 ):
                     return redirect(
                         reverse(

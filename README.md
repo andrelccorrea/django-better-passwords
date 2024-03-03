@@ -20,8 +20,8 @@ Recommended Python 3.11 or 3.12 and Django 4.2 or 5.0;
 ## Quick start
 
 1. Install the lib with `pip install django-better-passwords`.
-2. Add `'django_better_passwords'` to `INSTALLED_APPS`.
-3. Add `'django_better_passwords.middleware.PasswordExpirationMiddleware'` to `MIDDLEWARE`. <br>It should be listed after authentication, session and message middlewares, like this:
+3. Add `'django_better_passwords.apps.BetterPasswordsConfig'` to `INSTALLED_APPS`.
+4. Add `'django_better_passwords.middleware.PasswordExpirationMiddleware'` to `MIDDLEWARE`. <br>It should be listed after authentication, session and message middlewares, like this:
    ```python
    MIDDLEWARE = [
       "django.middleware.security.SecurityMiddleware",
@@ -34,7 +34,7 @@ Recommended Python 3.11 or 3.12 and Django 4.2 or 5.0;
       "django.middleware.clickjacking.XFrameOptionsMiddleware",
    ]
    ```
-4. Add `'django_better_passwords.validators.custom_password_validator.CustomPasswordValidator'` to `AUTH_PASSWORD_VALIDATORS`.<br>
+5. Add `'django_better_passwords.validators.custom_password_validator.CustomPasswordValidator'` to `AUTH_PASSWORD_VALIDATORS`.<br>
 Comment out or remove `'django.contrib.auth.password_validation.MinimumLengthValidator'` to avoid conflicting:
    ```python
    AUTH_PASSWORD_VALIDATORS = [
@@ -53,12 +53,12 @@ Comment out or remove `'django.contrib.auth.password_validation.MinimumLengthVal
       },
    ]
    ```
-5. The validator accepts 4 parameters, being:
+1. The validator accepts 4 parameters, being:
    1. `min_length (int)`: the minimum password length;
    2. `max_length (int)`: the maximum password length;
    3. `required_characters (str)`: a string containing a list of characters of which at least one must be present in the password;
    4. `forbidden_characters (str)`: a string containing a list of characters none of which can be present in the password;
-6. Aditional app settings:
+2. Aditional app settings:
    ```python
    DBP_PASSWORD_EXPIRATION_DAYS = 60
    DBP_PASSWORD_CHANGE_REDIRECT_URL = "password_change"
