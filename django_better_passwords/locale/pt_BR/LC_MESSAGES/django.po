@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-07 01:32+0000\n"
+"POT-Creation-Date: 2024-03-07 16:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,47 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: middleware.py:63
+#: middleware.py:67
 msgid "Update your password to get started."
 msgstr "Atualize sua senha para começar."
 
-#: middleware.py:65
+#: middleware.py:69
 msgid "Your password is at least {} days old and needs to be updated."
 msgstr "Sua senha tem pelo menos {} dias e precisa ser atualizada."
 
-#: validators/custom_password_validator.py:46
+#: validators/custom_password_validator.py:50
 msgid "Password must contain at least {} characters."
 msgstr "A senha deve conter pelo menos {} caracteres."
 
-#: validators/custom_password_validator.py:52
+#: validators/custom_password_validator.py:56
 msgid "Password cannot be longer than {} characters."
 msgstr "A senha não pode ter mais de {} caracteres."
 
-#: validators/custom_password_validator.py:61
-msgid "Password must contain at least one of the following characters: {}"
-msgstr "A senha deve conter pelo menos um dos seguintes caracteres: {}"
+#: validators/custom_password_validator.py:66
+#, fuzzy
+#| msgid "Password must contain at least one of the following characters: {}"
+msgid "Password must contain at least {} of the following characters: {}"
+msgstr "A senha deve conter pelo menos {} um dos seguintes caracteres: {}"
 
-#: validators/custom_password_validator.py:70
+#: validators/custom_password_validator.py:75
 msgid "Password cannot contain the following characters: {}."
 msgstr "A senha não pode conter os seguintes caracteres: {}."
 
-#: validators/custom_password_validator.py:75
+#: validators/custom_password_validator.py:80
 msgid "Password must contain at least one digit."
 msgstr "A senha deve conter pelo menos um dígito."
 
-#: validators/custom_password_validator.py:79
+#: validators/custom_password_validator.py:84
 msgid "Password must contain at least one upper case letter."
 msgstr "A senha deve conter pelo menos uma letra maiúscula."
 
-#: validators/custom_password_validator.py:83
+#: validators/custom_password_validator.py:88
 msgid "Password must contain at least one lower case letter."
 msgstr "A senha deve conter pelo menos uma letra minúscula."
 
-#: validators/custom_password_validator.py:86
+#: validators/custom_password_validator.py:91
 msgid "Your password must be between {} and {} characters length.<br>"
 msgstr "Sua senha deve ter entre {} e {} caracteres.<br>"
 
-#: validators/custom_password_validator.py:87
+#: validators/custom_password_validator.py:92
 msgid ""
 "Your password must contain at least one digit, one upper case and one lower "
 "case letters.<br>"
@@ -66,11 +68,11 @@ msgstr ""
 "Sua senha deve conter pelo menos um dígito, uma letra maiúscula e uma letra "
 "minúscula.<br>"
 
-#: validators/custom_password_validator.py:90
+#: validators/custom_password_validator.py:95
 msgid ""
 "Your password must contain at least one of the following characters: {}<br>"
 msgstr "Sua senha deve conter pelo menos um dos seguintes caracteres: {}<br>"
 
-#: validators/custom_password_validator.py:93
+#: validators/custom_password_validator.py:98
 msgid "Your password cannot contain the following characters: {}.<br>"
 msgstr "Sua senha não pode conter os seguintes caracteres: {}.<br>"
