@@ -43,13 +43,13 @@ class CustomPasswordValidator:
     def _validate_min_length(self, password: str):
         if len(password) < self.min_length:
             raise ValidationError(
-                _(f"Password must contain at least {self.min_length} characters.")
+                _("Password must contain at least {} characters.").format(self.min_length)
             )
 
     def _validate_max_length(self, password: str):
         if len(password) > self.max_length:
             raise ValidationError(
-                _(f"Password cannot be longer than {self.max_length} characters.")
+                _("Password cannot be longer than {} characters.").format(self.max_length)
             )
 
     def _validate_required_characters(self, password: str):
@@ -58,8 +58,8 @@ class CustomPasswordValidator:
         ):
             raise ValidationError(
                 _(
-                    f"Password must contain at least one of the following characters: {self.required_characters}"
-                )
+                    "Password must contain at least one of the following characters: {}"
+                ).format(self.required_characters)
             )
 
     def _validate_forbidden_characters(self, password: str):
@@ -67,7 +67,7 @@ class CustomPasswordValidator:
             char in self.forbidden_characters for char in password
         ):
             raise ValidationError(
-                _(f"Password cannot contain the following characters: {self.forbidden_characters}.")
+                _("Password cannot contain the following characters: {}.").format(self.forbidden_characters)
             )
 
     def _validate_digits(self, password: str):
@@ -83,15 +83,13 @@ class CustomPasswordValidator:
             raise ValidationError(_("Password must contain at least one lower case letter."))
 
     def get_help_text(self):
-        help_text = (
-            f"Your password must be between {self.min_length} and {self.max_length} characters lenght.<br>"
-            "Your password must contain at least one digit, one upper case and one lower case letters.<br>"
-        )
+        help_text = _("Your password must be between {} and {} characters lenght.<br>").format(self.min_length, self.max_length)
+        help_text += _("Your password must contain at least one digit, one upper case and one lower case letters.<br>")
 
         if self.required_characters:
-            help_text += f"Your password must contain at least one of the following characters: {self.required_characters}<br>"
+            help_text += _("Your password must contain at least one of the following characters: {}<br>").format(self.required_characters)
 
         if self.forbidden_characters:
-            help_text += f"Your password cannot contain the following characters: {self.forbidden_characters}.<br>"
+            help_text += _("Your password cannot contain the following characters: {}.<br>").format(self.forbidden_characters)
 
         return _(mark_safe(help_text))

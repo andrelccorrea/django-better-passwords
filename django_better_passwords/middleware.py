@@ -60,16 +60,15 @@ class PasswordExpirationMiddleware:
 
                 if request.method == "GET":
                     message = (
-                        "Update your password to get started."
+                        _("Update your password to get started.")
                         if record.first_login
-                        else f"Your password is at least {self.expiration_days.days} days old and needs to be updated."
+                        else _("Your password is at least {} days old and needs to be updated.").format(self.expiration_days.days)
                     )
 
                     messages.add_message(
                         request,
                         messages.WARNING,
-                        _(message),
-                        fail_silently=True,
+                        message
                     )
 
         response = self.get_response(request)
