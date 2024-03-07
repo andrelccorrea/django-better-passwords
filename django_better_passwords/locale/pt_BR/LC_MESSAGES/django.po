@@ -35,8 +35,6 @@ msgid "Password cannot be longer than {} characters."
 msgstr "A senha não pode ter mais de {} caracteres."
 
 #: validators/custom_password_validator.py:66
-#, fuzzy
-#| msgid "Password must contain at least one of the following characters: {}"
 msgid "Password must contain at least {} of the following characters: {}"
 msgstr "A senha deve conter pelo menos {} um dos seguintes caracteres: {}"
 
