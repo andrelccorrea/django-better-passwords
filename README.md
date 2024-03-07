@@ -48,16 +48,18 @@ Comment out or remove `'django.contrib.auth.password_validation.MinimumLengthVal
                "min_length": 8,
                "max_length": 20,
                "required_characters": "!#$%^&*()_+{}[]:\"-=,./<>?",
+               "required_characters_count": 2,
                "forbidden_characters": "@",
          },
       },
    ]
    ```
-1. The validator accepts 4 parameters, being:
+1. The validator accepts 5 parameters, being:
    1. `min_length (int)`: the minimum password length;
    2. `max_length (int)`: the maximum password length;
-   3. `required_characters (str)`: a string containing a list of characters of which at least one must be present in the password;
-   4. `forbidden_characters (str)`: a string containing a list of characters none of which can be present in the password;
+   3. `required_characters (str)`: a string containing a list of special characters of which at least `required_characters_count` must be present in the password;
+   4. `required_characters_count (int)`: the number of special required characters that must be present in the password;
+   5. `forbidden_characters (str)`: a string containing a list of characters none of which can be present in the password;
 2. Aditional app settings:
    ```python
    DBP_PASSWORD_EXPIRATION_DAYS = 60

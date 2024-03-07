@@ -28,7 +28,7 @@ Quick start
 
 1. Install the lib with ``pip install django-better-passwords``.
 
-2. Add ``'better_passwords'`` to ``INSTALLED_APPS``.
+2. Add ``'django_better_passwords.apps.BetterPasswordsConfig'`` to ``INSTALLED_APPS``.
 
 3. Add ``'better_passwords.middleware.PasswordExpirationMiddleware'`` to
    ``MIDDLEWARE``. It should be listed after authentication, session and
@@ -71,13 +71,13 @@ Quick start
          },
       ]
 
-5. The validator accepts 4 parameters, being:
+5. The validator accepts 5 parameters, being:
 
    1. ``min_length (int)``: the minimum password length;
    2. ``max_length (int)``: the maximum password length;
-   3. ``required_characters (str)``: a string containing a list of
-      characters of which at least one must be present in the password;
-   4. ``forbidden_characters (str)``: a string containing a list of
+   3. ``required_characters (str)``: a string containing a list of special characters of which at least ``required_characters_count`` must be present in the password;
+   4. ``required_characters_count (int)``: the number of special required characters that must be present in the password;
+   5. ``forbidden_characters (str)``: a string containing a list of
       characters none of which can be present in the password;
 
 6. Aditional app settings:
