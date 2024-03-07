@@ -15,6 +15,8 @@ class CustomPasswordValidator:
         - max_length (Optional[int]): maximum length, defaults to 30
         - required_characters (Optional[str]): characters that must be present,
         defaults to ''
+        - required_characters_count (Optional[int]): number of required characters
+        that must be present, defaults to 1
         - forbidden_characters (Optional[str]): characters that cannot be present,
         defaults to ''
     """
@@ -24,11 +26,13 @@ class CustomPasswordValidator:
         min_length: int = 6,
         max_length: int = 30,
         required_characters: str = "",
+        required_characters_count: int = 1,
         forbidden_characters: str = "",
     ):
         self.min_length = min_length
         self.max_length = max_length
         self.required_characters = required_characters
+        self.required_characters_count = required_characters_count
         self.forbidden_characters = forbidden_characters
 
     def validate(self, password, user=None):
@@ -53,14 +57,16 @@ class CustomPasswordValidator:
             )
 
     def _validate_required_characters(self, password: str):
-        if self.required_characters and not any(
-            char in password for char in self.required_characters
-        ):
-            raise ValidationError(
-                _(
-                    f"Password must contain at least one of the following characters: {self.required_characters}"
+
+        if self.required_characters and self.required_characters_count > 0:
+            count = sum(1 for char in password if char in self.required_characters)
+
+            if count < self.required_characters_count:
+                raise ValidationError(
+                    _(
+                        f"Password must contain at least {self.required_characters_count} of the following characters: {self.required_characters}"
+                    )
                 )
-            )
 
     def _validate_forbidden_characters(self, password: str):
         if self.forbidden_characters and any(
