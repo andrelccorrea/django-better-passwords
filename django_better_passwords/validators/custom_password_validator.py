@@ -83,7 +83,7 @@ class CustomPasswordValidator:
             raise ValidationError(_("Password must contain at least one lower case letter."))
 
     def get_help_text(self):
-        help_text = _("Your password must be between {} and {} characters lenght.<br>").format(self.min_length, self.max_length)
+        help_text = _("Your password must be between {} and {} characters length.<br>").format(self.min_length, self.max_length)
         help_text += _("Your password must contain at least one digit, one upper case and one lower case letters.<br>")
 
         if self.required_characters:
