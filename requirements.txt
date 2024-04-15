@@ -56,7 +56,7 @@ pyproject-hooks==1.0.0
     # via build
 pyyaml==6.0.1
     # via pre-commit
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via django
 virtualenv==20.25.0
     # via pre-commit
