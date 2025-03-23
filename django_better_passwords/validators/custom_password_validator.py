@@ -90,7 +90,7 @@ class CustomPasswordValidator:
 
     def get_help_text(self):
         help_text = (
-            f"Your password must be between {self.min_length} and {self.max_length} characters lenght.<br>"
+            f"Your password must be between {self.min_length} and {self.max_length} characters length.<br>"
             "Your password must contain at least one digit, one upper case and one lower case letters.<br>"
         )
 
