@@ -18,7 +18,7 @@ click==8.1.7
     #   pip-tools
 distlib==0.3.8
     # via virtualenv
-django==4.2.20
+django==4.2.21
     # via -r requirements.in
 filelock==3.13.1
     # via virtualenv
