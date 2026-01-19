@@ -20,7 +20,7 @@ distlib==0.3.8
     # via virtualenv
 django==4.2.20
     # via -r requirements.in
-filelock==3.13.1
+filelock==3.19.1
     # via virtualenv
 flake8==7.0.0
     # via -r requirements.in
@@ -66,11 +66,12 @@ tomli==2.2.1
     #   build
     #   pip-tools
     #   pyproject-hooks
-typing-extensions==4.12.2
+typing-extensions==4.15.0
     # via
     #   asgiref
     #   black
-virtualenv==20.26.6
+    #   virtualenv
+virtualenv==20.36.1
     # via pre-commit
 wheel==0.42.0
     # via pip-tools
