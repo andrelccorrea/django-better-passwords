@@ -36,10 +36,11 @@ mypy-extensions==1.0.0
     # via black
 nodeenv==1.8.0
     # via pre-commit
-packaging==23.2
+packaging==26.0
     # via
     #   black
     #   build
+    #   wheel
 pathspec==0.12.1
     # via black
 pip-tools==7.3.0
@@ -72,7 +73,7 @@ typing-extensions==4.12.2
     #   black
 virtualenv==20.26.6
     # via pre-commit
-wheel==0.42.0
+wheel==0.46.2
     # via pip-tools
 zipp==3.21.0
     # via importlib-metadata
